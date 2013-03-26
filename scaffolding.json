@@ -1,9 +1,11 @@
 {
-    "package_name": null,
-    "author": null,
-    "mail": null,
-    "package_name_underscore": {
-        "lambda": "vars['package_name'].replace('-', '_')"
-    },
-    "version": null
+    "variables": {
+        "package_name": null,
+        "author": null,
+        "mail": null,
+        "package_name_underscore": {
+            "lambda": "vars['package_name'].replace('-', '_')"
+        },
+        "version": null
+    }
 }
