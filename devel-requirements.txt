@@ -1,2 +1,2 @@
 -e .
-git+https://github.com/harobed/nose2.git#egg=nose2
+git+git://github.com/nose-devs/nose2.git#egg=nose2
