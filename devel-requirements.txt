@@ -1,3 +1,2 @@
 -e .
-nose2>=0.4.7
-https://bitbucket.org/harobed/nose2-cov/downloads/nose2-cov-1.0a4.tar.gz
+nose2
