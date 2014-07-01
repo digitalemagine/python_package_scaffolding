@@ -24,13 +24,13 @@ def local_adjust_options(options, args):
     tmp_dir = mkdtemp()
     print('download setuptools...')
     f = open(path_join(tmp_dir, 'setuptools-latest.tar.gz'), 'w')
-    f.write(urlopen('https://pypi.python.org/packages/source/s/setuptools/setuptools-5.3.tar.gz#md5=c8d19510c03b0e2e01880c0d8f080083').read())  # NOQA
+    f.write(urlopen('https://pypi.python.org/packages/source/s/setuptools/setuptools-5.3.tar.gz#md5=f4e0aa872b3e64de38c5acb478c9452b').read())  # NOQA
     f.close()
     print('setuptools downloaded')
 
     print('download pip...')
     f = open(path_join(tmp_dir, 'pip-latest.tar.gz'), 'w')
-    f.write(urlopen('https://pypi.python.org/packages/source/p/pip/pip-1.5.6.tar.gz#md5=6afbb46aeb48abac658d4df742bff714').read())  # NOQA
+    f.write(urlopen('https://pypi.python.org/packages/source/p/pip/pip-1.5.6.tar.gz#md5=01026f87978932060cc86c1dc527903e').read())  # NOQA
     f.close()
     print('pip downloaded')
 
