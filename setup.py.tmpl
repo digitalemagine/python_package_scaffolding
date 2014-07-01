@@ -9,20 +9,9 @@ v = open(os.path.join(here, '{{package_name_underscore}}', '__init__.py'))
 version = re.compile(r".*__version__ = '(.*?)'", re.S).match(v.read()).group(1)
 v.close()
 
-
-def parse_requirements(file_name):
-    requirements = []
-    for line in open(file_name, 'r').read().split('\n'):
-        if re.match(r'(\s*#)|(\s*$)', line):
-            continue
-        if re.match(r'\s*-e\s+', line):
-            requirements.append(re.sub(r'\s*-e\s+.*#egg=(.*)$', r'\1', line))
-        elif re.match(r'\s*-f\s+', line):
-            pass
-        else:
-            requirements.append(line)
-
-    return requirements
+if (len(sys.argv) > 1) and (sys.argv[1] in ('develop', 'install')):
+    import pip
+    pip.main(['install', '-r', 'requirements.txt', '--no-clean'])
 
 setup(
     name='{{package_name}}',
@@ -32,7 +21,6 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     zip_safe=False,
-    install_requires=parse_requirements("requirements.txt"),
     #entry_points="""
     #[console_scripts]
     #scaffolding-engine = {{package_name_underscore}}.scripts:main
